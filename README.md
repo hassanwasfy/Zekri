@@ -1,2 +1,2 @@
-# ZekriKotlin
-New enhanced version of ( Zekri ) App, check readme file please.
+# Zekri
+New enhanced version of ( Zekri_Java ) App, check readme file please.
