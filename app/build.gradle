@@ -1,0 +1,92 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace "com.hassanwasfy.zekri"
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.hassanwasfy.zekri"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+
+    def corKtx = "1.9.0"
+    //noinspection GradleDependency
+    implementation "androidx.core:core-ktx:$corKtx"
+    def constraint = "2.1.4"
+    //noinspection GradleDependency
+    implementation "androidx.constraintlayout:constraintlayout:$constraint"
+    def appCompat = "1.5.1"
+    implementation "androidx.appcompat:appcompat:$appCompat"
+    def material = "1.7.0"
+    implementation "com.google.android.material:material:$material"
+    def junit = "4.13.2"
+    testImplementation "junit:junit:$junit"
+    def extJunit = "1.1.4"
+    androidTestImplementation "androidx.test.ext:junit:$extJunit"
+    def espresso_core = "3.5.0"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core"
+
+
+    def cardView = "1.0.0"
+    //card view
+    implementation "androidx.cardview:cardview:$cardView"
+
+    def recycler = "1.2.1"
+    //recycler view
+    //noinspection GradleDependency
+    implementation "androidx.recyclerview:recyclerview:$recycler"
+
+    def recyclerViewSelection = "1.1.0"
+    implementation "androidx.recyclerview:recyclerview-selection:$recyclerViewSelection"
+
+    def intuit = "1.0.6"
+    //intuit
+    implementation "com.intuit.sdp:sdp-android:$intuit"
+    implementation "com.intuit.ssp:ssp-android:$intuit"
+
+    def lottieVersion = "5.2.0"
+    //lottie
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    def roomVersion = "2.4.3"
+    def lifecycleVersion = "2.5.1"
+    //Room Components
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
+    //Lifecycle components
+    //noinspection GradleDependency
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
+}
